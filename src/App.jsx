@@ -4,7 +4,7 @@ import PictureGrid from './Picturegrid'
 
 
 function App() {
-
+document.title = "BST Photography";
 
 const images = [
   { src: './photo_6005941701492986367_y.jpg' },
