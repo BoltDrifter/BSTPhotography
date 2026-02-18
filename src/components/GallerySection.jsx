@@ -4,7 +4,27 @@ import './GallerySection.css';
 function GallerySection({ images }) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [imageDimensions, setImageDimensions] = useState({});
   const galleryRef = useRef(null);
+
+  useEffect(() => {
+    const loadImageDimensions = async () => {
+      const dimensions = {};
+      for (const img of images) {
+        const image = new Image();
+        image.onload = () => {
+          dimensions[img.src] = {
+            width: image.naturalWidth,
+            height: image.naturalHeight,
+            ratio: image.naturalWidth / image.naturalHeight,
+          };
+          setImageDimensions((prev) => ({ ...prev, ...dimensions }));
+        };
+        image.src = img.src;
+      }
+    };
+    loadImageDimensions();
+  }, [images]);
 
   const openLightbox = (img) => {
     setSelectedImage(img);
@@ -42,20 +62,21 @@ function GallerySection({ images }) {
 
         <div className="gallery-grid" ref={galleryRef}>
           {images.map((img, index) => {
-            const isLarge = (index % 7 === 0) || (index % 7 === 3);
-            const isWide = (index % 7 === 5);
+            const dims = imageDimensions[img.src];
+            const aspectRatio = dims ? dims.ratio : 1;
 
             return (
               <div
                 key={index}
-                className={`gallery-item ${isLarge ? 'gallery-item-large' : ''} ${
-                  isWide ? 'gallery-item-wide' : ''
-                }`}
+                className="gallery-item"
                 onClick={() => openLightbox(img)}
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter') openLightbox(img);
+                }}
+                style={{
+                  aspectRatio: aspectRatio,
                 }}
               >
                 <div className="gallery-item-wrapper">
