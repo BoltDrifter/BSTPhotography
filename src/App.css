@@ -1,27 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-
-h1{
-  padding-top: 300px;
-  padding-bottom: 0px;
-  padding-left: 40px;
+.app-container {
+  margin-left: 80px;
+  width: calc(100% - 80px);
 }
 
-
-.Intro h2 {
-  font-size: x-large;
-  padding-left: 40px;
-  /* no max-width here because container limits width */
-}
-
-.Gallery {
-  width: 100vw;         /* full viewport width */
-  padding-top: 150px;
-  text-align: center;
-  margin-left: calc(-50vw + 50%); /* offset to break out of container centering */
-}
-
-.Gallery h2 {
-  font-size: 60px;
-  margin: 0;
+@media (max-width: 768px) {
+  .app-container {
+    margin-left: 0;
+    margin-top: 60px;
+    width: 100%;
+  }
 }

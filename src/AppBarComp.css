@@ -1,6 +1,211 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+.sidebar-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 80px;
+  background-color: var(--color-white);
+  border-right: 1px solid var(--color-gray-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: calc(var(--spacing-unit) * 4) 0;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-.AppBare {
-  text-align: left;
-  padding-left: 2rem /* or margin-left: 2rem */
+.nav-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--spacing-unit) * 2);
+  margin-bottom: calc(var(--spacing-unit) * 8);
+}
+
+.brand-initials {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--color-primary);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.brand-divider {
+  width: 1px;
+  height: 40px;
+  background-color: var(--color-accent);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-unit) * 6);
+  flex: 1;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--spacing-unit) * 1);
+  color: var(--color-gray);
+  text-decoration: none;
+  position: relative;
+  padding: calc(var(--spacing-unit) * 2) 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 0;
+  background-color: var(--color-accent);
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::before,
+.nav-link:focus::before {
+  height: 100%;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--color-primary);
+}
+
+.nav-number {
+  font-family: var(--font-secondary);
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.nav-label {
+  font-family: var(--font-secondary);
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.nav-social {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-unit) * 3);
+  margin-bottom: calc(var(--spacing-unit) * 6);
+}
+
+.social-link {
+  font-family: var(--font-secondary);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: var(--color-gray);
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.social-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-accent);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover,
+.social-link:focus {
+  color: var(--color-primary);
+}
+
+.social-link:hover::after,
+.social-link:focus::after {
+  width: 100%;
+}
+
+.nav-copyright {
+  display: flex;
+  align-items: center;
+}
+
+.copyright-text {
+  font-family: var(--font-secondary);
+  font-size: 0.625rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--color-gray);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+@media (max-width: 768px) {
+  .sidebar-nav {
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 calc(var(--spacing-unit) * 3);
+    border-right: none;
+    border-bottom: 1px solid var(--color-gray-light);
+  }
+
+  .nav-brand {
+    margin-bottom: 0;
+    flex-direction: row;
+    gap: calc(var(--spacing-unit) * 2);
+  }
+
+  .brand-initials {
+    writing-mode: horizontal-tb;
+    text-orientation: initial;
+  }
+
+  .brand-divider {
+    width: 40px;
+    height: 1px;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: calc(var(--spacing-unit) * 4);
+    flex: 0;
+  }
+
+  .nav-link {
+    flex-direction: row;
+    gap: calc(var(--spacing-unit) * 1);
+    padding: 0;
+  }
+
+  .nav-link::before {
+    display: none;
+  }
+
+  .nav-label {
+    writing-mode: horizontal-tb;
+    text-orientation: initial;
+  }
+
+  .nav-social {
+    flex-direction: row;
+    gap: calc(var(--spacing-unit) * 2);
+    margin-bottom: 0;
+  }
+
+  .nav-copyright {
+    display: none;
+  }
 }
