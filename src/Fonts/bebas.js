@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
-const theme = createTheme({
+const BebasTheme = createTheme({
   typography: {
     fontFamily: "'Bebas Neue', sans-serif",
   },
@@ -8,11 +8,11 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          color: 'black', // Optional: all button text black
+          color: 'black', // Optional: button text color
         },
       },
     },
   },
 });
 
-export default theme;
+export default BebasTheme;

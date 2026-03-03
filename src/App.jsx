@@ -3,6 +3,7 @@ import AppBarComp from './AppBarComp'
 import PictureGrid from './Picturegrid'
 
 
+
 function App() {
 document.title = "BST Photography";
 
@@ -71,27 +72,27 @@ const images = [
   { src: './photo_5830001630387488115_y.jpg' },
   { src: './photo_6012711162656966772_y.jpg' },
   { src: 'public/IMG_0085.JPG' },
-  { src: 'public/IMG_0088.JPG' },
-  { src: 'public/IMG_0104.JPG' },
-  { src: 'public/IMG_0144.JPG' },
-  { src: 'public/IMG_0478.JPG' },
-  { src: 'public/IMG_0888.JPG' },
-  { src: 'public/IMG_0894.JPG' },
-  { src: 'public/IMG_0898.JPG' },
-  { src: 'public/IMG_0935.JPG' },
-  { src: 'public/IMG_1068.JPG' },
-  { src: 'public/IMG_1197.JPG' },
-  { src: 'public/IMG_1311.JPG' },
-  { src: 'public/IMG_1313.JPG' },
-  { src: 'public/IMG_1473.JPG' },
-  { src: 'public/IMG_1483.JPG' },
-  { src: 'public/IMG_1494.JPG' },
-  { src: 'public/IMG_1499.JPG' },
-  { src: 'public/IMG_1518.JPG' },
-  { src: 'public/IMG_9363.JPG' },
-  { src: 'public/IMG_9379.JPG' },
-  { src: 'public/IMG_9435.JPG' },
-  { src: 'public/IMG_9501.JPG' },
+    { src: 'public/IMG_0088.JPG' },
+    { src: 'public/IMG_0104.JPG' },
+    { src: 'public/IMG_0144.JPG' },
+    { src: 'public/IMG_0478.JPG' },
+    { src: 'public/IMG_0888.JPG' },
+    { src: 'public/IMG_0894.JPG' },
+    { src: 'public/IMG_0898.JPG' },
+    { src: 'public/IMG_0935.JPG' },
+    { src: 'public/IMG_1068.JPG' },
+    { src: 'public/IMG_1197.JPG' },
+    { src: 'public/IMG_1311.JPG' },
+    { src: 'public/IMG_1313.JPG' },
+    { src: 'public/IMG_1473.JPG' },
+    { src: 'public/IMG_1483.JPG' },
+    { src: 'public/IMG_1494.JPG' },
+    { src: 'public/IMG_1499.JPG' },
+    { src: 'public/IMG_1518.JPG' },
+    { src: 'public/IMG_9363.JPG' },
+    { src: 'public/IMG_9379.JPG' },
+    { src: 'public/IMG_9435.JPG' },
+    { src: 'public/IMG_9501.JPG' }
 ];
 
 
@@ -105,11 +106,9 @@ return (
     <div className='container'>
       <div className='Intro'>
     <h2>
-          Hi, I'm Baldeep Singh Taluja, a high school student at Cambridge International School, Dubai (Class of 2025) with a strong passion for software development, data analysis, and creative tech projects. Photography has been my passion since I was 10, capturing the world through my lens. My journey started with a simple point-and-shoot camera, and over the years, it has grown into a hobby. I specialize in landmark and vehicle photography.
+          I'm Baldeep Singh Taluja, a Freshman student at American University of Sharjah (Class of 2029) with a strong passion for software development, data analysis, and creative tech projects. Photography has been my passion since I was 10, capturing the world through my lens. My journey started with a simple point-and-shoot camera, and over the years, it has grown into a hobby. I specialize in landmark and vehicle photography.
     </h2>
-
     </div>
-    
     </div>
       <div className='Gallery'>
         <h2>
